@@ -51,7 +51,7 @@ const researchData = {
       risk: "Medium",
       action: "Develop vertical-specific Crew templates",
       timeline: "Medium-term"
-    },
+    }, 
     { 
       id: 3, 
       name: "AutoGen + MCP", 
@@ -170,7 +170,7 @@ const Card = ({ children, delay = 0, title }: { children: React.ReactNode; delay
   );
 };
 
-export default function ResearchDashboard() {
+export default function TrendingPage() {
   const [mounted, setMounted] = useState(false);
   const [lastRefresh, setLastRefresh] = useState<string>(new Date().toLocaleString('zh-HK'));
   
@@ -305,12 +305,12 @@ export default function ResearchDashboard() {
                 borderRadius: "8px",
                 border: `1px solid ${theme.primary}20`
               }}>
-                <p style={{ fontSize: "12px", color: theme.textSecondary, marginBottom: "4px" }}>Current Focus</p>
+                <p style={{ fontSize: "12px", color: theme.textSecondary, marginBottom: "4px" }}>當前焦點</p>
                 <p style={{ fontSize: "16px", fontWeight: "600", color: theme.primary }}>{researchSummary.focus}</p>
               </div>
               
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <p style={{ fontSize: "14px", color: theme.textSecondary }}>Hotness Score:</p>
+                <p style={{ fontSize: "14px", color: theme.textSecondary }}>熱門指數:</p>
                 <div style={{ display: "flex" }}>
                   {[1,2,3,4,5].map(i => (
                     <span key={i} style={{ fontSize: "16px", color: i <= researchSummary.hotness ? theme.danger : "#E5E7EB" }}>
@@ -321,7 +321,7 @@ export default function ResearchDashboard() {
               </div>
 
               <div>
-                <p style={{ fontSize: "12px", color: theme.textSecondary, marginBottom: "4px" }}>Key Insight</p>
+                <p style={{ fontSize: "12px", color: theme.textSecondary, marginBottom: "4px" }}>關鍵洞察</p>
                 <p style={{ fontSize: "14px", color: theme.text }}>{researchSummary.keyInsight}</p>
               </div>
 
@@ -331,7 +331,7 @@ export default function ResearchDashboard() {
                 borderRadius: "8px",
                 borderLeft: `4px solid ${theme.success}`
               }}>
-                <p style={{ fontSize: "12px", color: theme.textSecondary, marginBottom: "4px" }}>Top Recommendation</p>
+                <p style={{ fontSize: "12px", color: theme.textSecondary, marginBottom: "4px" }}>最佳建議</p>
                 <p style={{ fontSize: "14px", fontWeight: "500", color: theme.success }}>{researchSummary.topRecommendation}</p>
               </div>
             </div>
